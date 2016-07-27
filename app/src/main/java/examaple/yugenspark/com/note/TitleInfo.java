@@ -1,9 +1,8 @@
 package examaple.yugenspark.com.note;
 
 /**
- * Created by Abhi on 24-07-2016.
- */
-public class ContactInfo {
+ * Created by Abhi on 26-07-2016.
+ */public class TitleInfo {
     protected String titlenote;
     protected String contentnote;
     protected static final String CONTENT_PREFIX = "Content_";
@@ -11,4 +10,3 @@ public class ContactInfo {
 
 
 }
-

@@ -14,6 +14,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,16 +23,16 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
 
+
         RecyclerView recList = (RecyclerView) findViewById(R.id.cardList);
         recList.setHasFixedSize(true);
         LinearLayoutManager llm = new LinearLayoutManager(this);
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         recList.setLayoutManager(llm);
-        ContactAdapter ca = new ContactAdapter(createList(30));
+        TitleAdapter ca = new TitleAdapter(createList(30));
         recList.setAdapter(ca);
 
     }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -58,14 +59,14 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private List<ContactInfo> createList(int size) {
+    private List<TitleInfo> createList(int size) {
 
-        List<ContactInfo> result = new ArrayList<ContactInfo>();
+        List<TitleInfo> result = new ArrayList<TitleInfo>();
         for (int i=1; i <= size; i++) {
-            ContactInfo ci = new ContactInfo();
+            TitleInfo ci = new TitleInfo();
 
-            ci.titlenote = ContactInfo.TITLE_OF_NOTE + i;
-            ci.contentnote = ContactInfo.CONTENT_PREFIX + i;
+            ci.titlenote = TitleInfo.TITLE_OF_NOTE + i;
+            ci.contentnote = TitleInfo.CONTENT_PREFIX + i;
 
             result.add(ci);
         }
@@ -73,5 +74,4 @@ public class MainActivity extends AppCompatActivity {
     }
 
 }
-
 

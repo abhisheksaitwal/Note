@@ -1,4 +1,3 @@
-
 package examaple.yugenspark.com.note;
 
 import android.support.v7.widget.RecyclerView;
@@ -9,44 +8,45 @@ import android.widget.TextView;
 
 import java.util.List;
 
-public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactViewHolder> {
 
-    private List<ContactInfo> contactList;
+public class TitleAdapter extends RecyclerView.Adapter<TitleAdapter.TitleViewHolder> {
 
-    public ContactAdapter(List<ContactInfo> contactList) {
-        this.contactList = contactList;
+    private List<TitleInfo> titleList;
+
+    public TitleAdapter(List<TitleInfo> titleList) {
+        this.titleList = titleList;
     }
 
 
     @Override
     public int getItemCount() {
-        return contactList.size();
+        return titleList.size();
     }
 
     @Override
-    public void onBindViewHolder(ContactViewHolder contactViewHolder, int i) {
-        ContactInfo ci = contactList.get(i);
+    public void onBindViewHolder(TitleViewHolder contactViewHolder, int i) {
+        TitleInfo ci = titleList.get(i);
         contactViewHolder.vTitleofnote.setText(ci.titlenote);
         contactViewHolder.vContent.setText(ci.contentnote);
         contactViewHolder.vTitle.setText(ci.titlenote);
     }
 
     @Override
-    public ContactViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
+    public TitleViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         View itemView = LayoutInflater.
                 from(viewGroup.getContext()).
                 inflate(R.layout.cardview, viewGroup, false);
 
-        return new ContactViewHolder(itemView);
+        return new TitleViewHolder(itemView);
     }
 
-    public static class ContactViewHolder extends RecyclerView.ViewHolder {
+    public static class TitleViewHolder extends RecyclerView.ViewHolder {
 
         protected TextView vTitleofnote;
         protected TextView vContent;
         protected TextView vTitle;
 
-        public ContactViewHolder(View v) {
+        public TitleViewHolder(View v) {
             super(v);
             vTitleofnote =  (TextView) v.findViewById(R.id.txttitle);
             vContent = (TextView)  v.findViewById(R.id.txtcontent);
